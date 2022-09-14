@@ -16,11 +16,17 @@
         <ul class="pagination">
             <li class="page-item"><a class="page-link" href="${url_p}/?page=1"><<</a></li>
             <li class="page-item"><a class="page-link" href="${url_p}/?page=${page-1}"><</a></li>
-            <c:if test ="${page} == 0">
-            
-            </c:if>
-                <li class="page-item"><a class="page-link" href="${url_p}/?page=${j-1}">${j-1}</a></li>
-               
+                <c:if test ="${page == 1 || page == 2 || page == null}">
+                <li class="page-item"><a class="page-link" href="${url_p}/?page=1">1</a></li>
+                <li class="page-item"><a class="page-link" href="${url_p}/?page=2">2</a></li>
+                <li class="page-item"><a class="page-link" href="${url_p}/?page=3">3</a></li>
+                </c:if>
+                <c:if test ="${page > 2 && page <= num_page}">
+                <li class="page-item"><a class="page-link" href="${url_p}/?page=${page - 1}">${page - 1}</a></li>
+                <li class="page-item"><a class="page-link" href="${url_p}/?page=${page}">${page}</a></li>
+                <li class="page-item"><a class="page-link" href="${url_p}/?page=${page + 1}">${page + 1}</a></li>
+                </c:if>
+
             <li class="page-item"><a class="page-link" href="${url_p}/?page=${page+1}">></a></li>
             <li class="page-item"><a class="page-link" href="${url_p}/?page=${num_page}">>></a></li>
         </ul>

@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @ControllerAdvice
 public class Run {
+    
     @Autowired
     private CategoryService categoryService;
     @Autowired
@@ -94,5 +95,10 @@ public class Run {
             return "redirect:" + id;
         }
     }
+    
+//    @RequestMapping("/")
+//    public String show(){
+//        return "run";
+//    }
     
 }

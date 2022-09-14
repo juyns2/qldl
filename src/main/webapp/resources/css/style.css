@@ -1,6 +1,7 @@
 a:hover{
     background-color: yellow;
 }
+
 a[alt] {
     display : none;
 }
