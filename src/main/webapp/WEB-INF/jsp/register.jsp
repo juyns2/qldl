@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="formj" uri="http://www.springframework.org/tags/form" %>
-<c:url value="/register" var="action" />
+<c:url value="/user/register" var="action" />
 
 <c:if test="${errMsg != null}">
     <div class="alert alert-danger">

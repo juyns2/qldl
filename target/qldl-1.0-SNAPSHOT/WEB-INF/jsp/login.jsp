@@ -1,6 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:url value="/login" var="action"/>
+
+<!--Goi Den login Trong SecConfig-->
+<c:url value="/user/login" var="action"/>
 
 <!--<form method="post" action="${action}">
     <div class="form-group">

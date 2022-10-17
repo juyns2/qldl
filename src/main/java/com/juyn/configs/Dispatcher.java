@@ -2,10 +2,6 @@ package com.juyn.configs;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-/**
- *
- * @author FPT SHOP
- */
 public class Dispatcher extends AbstractAnnotationConfigDispatcherServletInitializer{
 
     @Override

@@ -13,14 +13,24 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="title" value="HOME" />
         <put-attribute name="content" value="/WEB-INF/jsp/home.jsp" />
     </definition>
-    <definition name="add" extends="baseLayout">
-        <put-attribute name="title" value="Them San Pham" />
-        <put-attribute name="content" value="/WEB-INF/jsp/addTour.jsp" />
+    
+    <definition name="tourAdd" extends="baseLayout">
+        <put-attribute name="title" value="ADD TOUR" />
+        <put-attribute name="content" value="/WEB-INF/jsp/tourAdd.jsp" />
     </definition>
-    <definition name="edit" extends="baseLayout">
-        <put-attribute name="title" value="Them San Pham" />
-        <put-attribute name="content" value="/WEB-INF/jsp/edit.jsp" />
+    <definition name="tourEdit" extends="baseLayout">
+        <put-attribute name="title" value="EDIT TOUR" />
+        <put-attribute name="content" value="/WEB-INF/jsp/tourEdit.jsp" />
     </definition>
+    <definition name="tourDetails" extends="baseLayout">
+        <put-attribute name="title" value="EMPLOYEE INFO" />
+        <put-attribute name="content" value="/WEB-INF/jsp/tourDetails.jsp" />
+    </definition>
+    <definition name="tourOrder" extends="baseLayout">
+        <put-attribute name="title" value="Dat Tour" />
+        <put-attribute name="content" value="/WEB-INF/jsp/tourOrder.jsp" />
+    </definition>
+    
     <definition name="login" extends="baseLayout">
         <put-attribute name="title" value="LOG IN" />
         <put-attribute name="content" value="/WEB-INF/jsp/login.jsp" />
@@ -28,5 +38,15 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
     <definition name="register" extends="baseLayout">
         <put-attribute name="title" value="SIG UP" />
         <put-attribute name="content" value="/WEB-INF/jsp/register.jsp" />
+    </definition>
+    
+    <definition name="empInfo" extends="baseLayout">
+        <put-attribute name="title" value="EMPLOYEE INFO" />
+        <put-attribute name="content" value="/WEB-INF/jsp/empInfo.jsp" />
+    </definition>
+    
+    <definition name="userInfo" extends="baseLayout">
+        <put-attribute name="title" value="EMPLOYEE INFO" />
+        <put-attribute name="content" value="/WEB-INF/jsp/userInfo.jsp" />
     </definition>
 </tiles-definitions>

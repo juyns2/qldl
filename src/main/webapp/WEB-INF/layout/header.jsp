@@ -15,11 +15,11 @@
             <div class="float-right">
                 <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="<c:url value="/login" />" role="tab"
+                        <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="<c:url value="/user/login" />" role="tab"
                            aria-controls="pills-login" aria-selected="true">Login</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="<c:url value="/register"/>"   role="tab"
+                        <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="<c:url value="/user/register"/>"   role="tab"
                            aria-controls="pills-register" aria-selected="false">Register</a>
                     </li>
                 </ul>
@@ -52,8 +52,19 @@
         <li class="nav-item">
             <a class="nav-link" href="#">TOUR</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Employee</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Employee
+            </a>
+            <div class="dropdown-menu">
+                <c:forEach var="j" items="${mngEmp}">
+                    <c:url value="/emp/showinfo" var="cUrl">
+                        <c:param name="mngEmpId" value="${j.id}" />
+                        <c:param name="empType" value="${j.type}" />
+                    </c:url>
+                    <a class="dropdown-item" href="${cUrl}">${j.id} - ${j.type}</a>
+                </c:forEach>
+            </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">#</a>
@@ -64,13 +75,19 @@
             </a>
             <div class="dropdown-menu">
                 <c:forEach var="j" items="${place}">
-                    <a class="dropdown-item" href="#">${j.id} - ${j.name}</a>
+                    <c:url value="/home/tour" var="cUrl">
+                        <c:param name="placeId" value="${j.id}" />
+                        <c:param name="placeName" value="${j.name}" />
+                    </c:url>
+                    <a class="dropdown-item" href="${cUrl}">${j.id} - ${j.name}</a>
                 </c:forEach>
             </div>
         </li>
-        <li>
-            ${pageContext.request.userPrincipal.name}
-        </li>
+        <c:if test="${pageContext.request.userPrincipal.name != null}">
+            <li class="nav-item active">
+                <a class="nav-link text-danger" href="<c:url value="/order" />">Order <span class="badge badge-danger" id="order-counter">${totalNumOrder}</span></a>
+            </li>
+        </c:if>
     </ul>
 </nav>
 

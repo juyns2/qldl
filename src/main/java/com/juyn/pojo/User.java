@@ -1,20 +1,24 @@
 package com.juyn.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
+import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import org.springframework.web.multipart.MultipartFile;
 
-/**
- *
- * @author FPT SHOP
- */
 @Entity
 @Table(name = "user")
-public class User implements Serializable{
+public class User implements Serializable {
+
     public static final String ADMIN = "ROLE_ADMIN";
     public static final String USER = "ROLE_USER";
     @Id
@@ -22,6 +26,8 @@ public class User implements Serializable{
     private int id;
     @Column(name = "first_name")
     private String firstName;
+    @Column(name = "avatar_url")
+    private String avatarUrl;
 //    @Column(name = "last_name")
 //    private String lastName;
 //    private String email;
@@ -31,6 +37,14 @@ public class User implements Serializable{
 //    private boolean active;
     @Column(name = "role_user")
     private String roleUser;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUser", fetch = FetchType.EAGER)
+    @JsonIgnore
+    private Collection<BillOrder> userBill;
+    
+
+    @Transient
+    private MultipartFile avatar;
 
     public int getId() {
         return id;
@@ -64,11 +78,36 @@ public class User implements Serializable{
         this.password = password;
     }
 
-    public String getUserRole() {
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
+    public String getRoleUser() {
         return roleUser;
     }
 
-    public void setUserRole(String userRole) {
-        this.roleUser = userRole;
+    public void setRoleUser(String roleUser) {
+        this.roleUser = roleUser;
     }
+
+    public MultipartFile getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(MultipartFile avatar) {
+        this.avatar = avatar;
+    }
+
+    public Collection<BillOrder> getUserBill() {
+        return userBill;
+    }
+
+    public void setUserBill(Collection<BillOrder> userBill) {
+        this.userBill = userBill;
+    }
+
 }

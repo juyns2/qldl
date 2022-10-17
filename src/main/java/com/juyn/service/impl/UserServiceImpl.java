@@ -14,10 +14,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author FPT SHOP
- */
 @Service("userDetailsService")
 public class UserServiceImpl implements UserService {
 
@@ -30,7 +26,7 @@ public class UserServiceImpl implements UserService {
     public boolean addUser(User user) {
         String pass = user.getPassword();
         user.setPassword(this.passwordEncoder.encode(pass));
-        user.setUserRole(User.USER);
+        user.setRoleUser(User.USER);
         return this.userRepository.addUser(user);
     }
 
@@ -46,8 +42,13 @@ public class UserServiceImpl implements UserService {
             throw new UsernameNotFoundException("User DOes NOT Exits");
         User user = users.get(0);
         Set<GrantedAuthority> auth = new HashSet<>();
-        auth.add(new SimpleGrantedAuthority(user.getUserRole()));
+        auth.add(new SimpleGrantedAuthority(user.getRoleUser()));
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), auth);
+    }
+
+    @Override
+    public User getUserById(int userId) {
+        return this.userRepository.getUserById(userId);
     }
 
 }
