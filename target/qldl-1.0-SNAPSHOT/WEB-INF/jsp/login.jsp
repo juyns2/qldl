@@ -23,15 +23,21 @@
         Has Error!
     </div>
 </c:if>
+<h1 style="text-align: center">Đăng nhập</h1>
 
 <form method="post" action="${action}">
-    <div class="form-outline mb-4">
-        <label for="username">Username</label>
+    <div class="  " id="dangnhap"> 
+    <div class="form-group--user  ">
+        <label for="username">Tài khoản</label>  
+
         <input type="text" id="username" name="username" class="form-control"/>
+
     </div>
-    <div class="form-outline mb-4">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" class="form-control"/>
+    <div class="form-group--user">
+        <label for="password">Mật khẩu</label>
+        <div class="">
+        <input  type="password" id="password" name="password" class="form-control"/>
+        </div>
     </div>
     <div class="row mb-4">
         <div class="col d-flex justify-content-center">
@@ -44,7 +50,7 @@
             <a href="#!">Forgot password?</a>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+    <button type="submit" class="btn btn-primary  mb-4">Sign in</button>
 
     <div class="text-center">
         <p>Not a member? <a href="#!">Register</a></p>
@@ -64,5 +70,6 @@
         <button type="button" class="btn btn-link btn-floating mx-1">
             <i class="fab fa-github"></i>
         </button>
+    </div>
     </div>
 </form>
