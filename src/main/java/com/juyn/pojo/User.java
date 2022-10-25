@@ -24,8 +24,8 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "first_name")
-    private String firstName;
+    @Column(name = "full_name")
+    private String fullName;
     @Column(name = "avatar_url")
     private String avatarUrl;
 //    @Column(name = "last_name")
@@ -52,14 +52,6 @@ public class User implements Serializable {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
     }
 
     public String getUsername() {
@@ -108,6 +100,14 @@ public class User implements Serializable {
 
     public void setUserBill(Collection<BillOrder> userBill) {
         this.userBill = userBill;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
 }

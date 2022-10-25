@@ -8,6 +8,7 @@ import com.juyn.pojo.MngEmployee;
 import com.juyn.pojo.Order;
 import com.juyn.pojo.Tour;
 import com.juyn.pojo.TourOrderDetails;
+import com.juyn.pojo.TourType;
 //import com.juyn.pojo.Tour;
 import com.juyn.repository.CommonRepository;
 import com.juyn.service.TourService;
@@ -147,6 +148,13 @@ public class CommonRepositoryImpl implements CommonRepository {
         
         Query q = session.createQuery(query);
         
+        return q.getResultList();
+    }
+
+    @Override
+    public List<TourType> getTourType() {
+        Session s = sessionFactory.getObject().getCurrentSession();
+        Query q = s.createQuery("From TourType");
         return q.getResultList();
     }
 

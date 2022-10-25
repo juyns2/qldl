@@ -38,7 +38,7 @@ public class TourRepositoryImpl implements TourRepository {
         Query q = session.createQuery(query);
 
         //PAGE Num
-        int max = 6;
+        int max = 12;
         q.setMaxResults(max);
         q.setFirstResult((page - 1) * max);
 

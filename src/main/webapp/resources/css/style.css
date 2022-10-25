@@ -135,7 +135,7 @@ a[alt] {
 #tab-register{
 
     margin-right: 25px;
-    
+
     background-color: transparent;
 }
 
@@ -197,14 +197,21 @@ a[alt] {
     max-width: 100%;
 }
 .nav-item{
-    font-family: Comic Sans MS;
+    font-family: "Open Sans", sans-serif;
     font-weight: bold;
 }
 
-#fonthome{
-    font-family: Comic Sans MS;
+.fonthome{
     font-weight: bold;
+    background-color: wheat;
+
+
 }
+#homefont{
+    font-size: 15px;
+}
+
+
 nav{
     /*font-family: Arial;*/
 }
@@ -264,7 +271,7 @@ nav{
 #fontcale{
 
 }
-#fontprice{
+.fontprice{
     font-size: 20px;
     font-weight: 500;
     color: red;
@@ -290,7 +297,7 @@ nav{
     margin-bottom: 20px;
 }
 .btntour{
-    width: 170px;
+    width: 180px;
     height: 55px;
     font-size: 14px;
     background-color: white;
@@ -308,6 +315,11 @@ nav{
 
 #editinfo{
     margin-left: 230px;
+}
+
+#editcontent{
+    width: 400px;
+    height: 150px;
 }
 
 #formedit{
@@ -346,6 +358,292 @@ a:hover{
     text-decoration: none;
     background-color: transparent;
 }
+
+.homeadd{
+    margin-left: 30px;
+
+}
+
+.fromaaddtour{
+    width: 600px;
+    background-color:snow;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 30px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+}
+
+.fromaaddtour input{
+    width: 300px;
+    margin-left: 40px;
+
+}
+
+#place{
+    width: 300px;
+    margin-left: 40px;
+}
+
+.fromaaddtour label{
+
+    margin-left: 50px;
+}
+.addstart{
+    background-color: #CADBDB;
+    margin-right: 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: red;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border: 1px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.editlogin0{
+    text-align: center;
+    padding-top: 3px;
+    background-color: #93A3A3;
+    margin-top: 10px;
+    border-color: black;
+    width: 55px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border-style: solid;
+    border-radius: 3px;
+
+}
+.editlogin{
+    margin-top: 6px;
+}
+
+.editlogin1 {
+
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 7px 8px;
+    color: #ffffff !important;
+    border-radius: 5px;
+    background: #9B6A1D;
+    border: 1px solid #9B6A1D;
+    transition: 0.4s;
+}
+.editlogin1:hover {
+    background: #292929;
+    text-decoration: none;
+}
+
+.empl label{
+    display: block;
+    margin-bottom: 0px;
+}
+#imgemp img{
+    width: 200px;
+    height: 200px;
+}
+
+#emplcenter{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#impbg{
+    background-color: snow;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+
+}
+
+
+#btnplace{
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 15px;
+    background: #9B6A1D;
+
+    width: 170px;
+    height: 55px;
+    font-size: 14px;
+    background-color: white;
+    border: 6px;
+    border-color: black;
+    box-shadow: rgba(0.15, 0, 0, 0.0) 3.2px 2.4px 2.4px;
+
+}
+#btnplace:hover {
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.add-empl{
+    margin: 30px;
+}
+
+#impbg{
+    margin-left: 70px;
+}
+
+.emp-add{
+    margin-top: 5px;
+}
+
+.emp-tourdetail{
+    margin: 20px;
+    margin-left: 80px;
+    border-style: double;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+.emp-info{
+    margin-top: 20px;
+    width:  400px;
+    height:280px;
+    border: 1px solid #c8a2af;
+    padding: 15px;
+
+}
+
+.emp-price{
+    margin-top: 20px;
+    width: 400px;
+    background-color: #CF4C96;
+    height: 200px;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-weight: bold;
+    color: whitesmoke;
+    font-size: 20px;
+    font-family: Helvetica;
+}
+
+.emp-fontprice{
+    font-size: 30px;
+    font-weight: bold;
+}
+#tour-comment{
+    height: 400px;
+    overflow-x:hidden;
+    overflow-y:auto;
+    border: 1px solid #c8a2af;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    background-color: #EBEBEB;
+}
+
+.tourdt-lb{
+    margin-right: 60px;
+    width: 150px;
+
+
+}
+.tourdt-lb2{
+    display: inline;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.tour-ct{
+    padding: 10px;
+    height: 250px;
+    width: 100%;
+}
+
+.tourdt-time{
+    font-size: 20px;
+    margin-left: 15px;
+    color: red; 
+}
+
+#tourdt-bonus{
+    
+
+}
+
+.tourdt-tilte{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.tourdt-img{
+    margin-left: 40px;
+    border: 1px solid #c8a2af;
+    
+}
+
+.tourdt-lb3{
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+ 
+   
+}
+
+.tourdt-lb4{
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+   
+}
+
+#tourdt-bg{
+       background-color: #E6EDC7;
+}
+
+.tourdt-fontp{
+    font-size: 25px;
+    font-weight: 600;
+    color: #FA1E22;
+}
+
+.tour-fp{
+    font-size: 15px;
+}
+
+#tourdt-bg img{
+    border-style: solid;
+    border-color:#7C7D75; 
+}
+
+#content{
+    width: 300px;
+    margin-left: 40px;
+    height: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -427,7 +725,7 @@ article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{
 }
 body{
     margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    /*font-family: "Open Sans", sans-serif;*/
     font-size:1rem;
     font-weight:400;
     line-height:1.5;

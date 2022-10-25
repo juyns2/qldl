@@ -1,4 +1,4 @@
-//var jload = "/qldl/js/jtest.html #p1, #p3, .p7";
+    //var jload = "/qldl/js/jtest.html #p1, #p3, .p7";
 var jload = "https://www.w3schools.com/jquery/jquery_ajax_get_post.asp .w3-example";
 var priceOrder = 0; var fetch; var URL; var moment;
 
@@ -6,6 +6,48 @@ $(document).ready(function () {
     $("#flip").click(function () {
         $("#panel").slideUp("slow");
         $("#flip").text(toPrice(12387.88, ' VNÐ'));
+    });
+    $("#show_hide_password a").on('click', function(event) {
+        event.preventDefault();
+        if($('#show_hide_password input').attr("type") === "text"){
+            $('#show_hide_password input').attr('type', 'password');
+            $('#show_hide_password i').addClass( "fa-eye-slash" );
+            $('#show_hide_password i').removeClass( "fa-eye" );
+        }else if($('#show_hide_password input').attr("type") === "password"){
+            $('#show_hide_password input').attr('type', 'text');
+            $('#show_hide_password i').removeClass( "fa-eye-slash" );
+            $('#show_hide_password i').addClass( "fa-eye" );
+        }
+    });
+    $("#confirm_password a").on('click', function(event) {
+        event.preventDefault();
+        if($('#confirm_password input').attr("type") === "text"){
+            $('#confirm_password input').attr('type', 'password');
+            $('#confirm_password i').addClass( "fa-eye-slash" );
+            $('#confirm_password i').removeClass( "fa-eye" );
+        }else if($('#confirm_password input').attr("type") === "password"){
+            $('#confirm_password input').attr('type', 'text');
+            $('#confirm_password i').removeClass( "fa-eye-slash" );
+            $('#confirm_password i').addClass( "fa-eye" );
+        }
+    });
+    let x = document.getElementById("signup_button");
+    x.disabled = true;
+    x.style.opacity = 0.2;
+    $('#passj, #conf_pass, #fullName, #username').on('keyup', function () {
+        if ($('#passj').val() === $('#conf_pass').val()) {
+            $('#message').html('Matching').css('color', 'green');
+        } else {
+            $('#message').html('Not Matching').css('color', 'red');
+        }
+        if ($('#fullName').val() !== '' && $('#username').val() !== '' && $('#passj').val() !== '' && $('#passj').val() === $('#conf_pass').val()) {
+            $('#signup_button').removeAttr('disabled');
+            x.style.opacity = 1;
+        }
+        else {
+            x.disabled = true;
+            x.style.opacity = 0.2;
+        }
     });
 });
 $(document).ready(function () {

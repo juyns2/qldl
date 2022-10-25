@@ -42,6 +42,7 @@ com\juyn\configs\handlersAfterLoginLogout\AfterLogin.class
 com\juyn\controllers\Run.class
 com\juyn\controllers\ApiHandlers.class
 com\juyn\controllers\Users.class
+com\juyn\pojo\TourType.class
 com\juyn\pojo\MaOrFe.class
 com\juyn\repository\impl\TourRepositoryImpl.class
 com\juyn\repository\impl\CommentRepositoryImpl.class

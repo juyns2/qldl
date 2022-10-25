@@ -17,13 +17,20 @@ public class Employees {
     
     @GetMapping("/emp/showinfo") // /{path}
     public String show(Model model, @RequestParam Map<String, String> params){ //@PathVariable(value = "path") String path,
-        model.addAttribute("empType", params.get("empType") + " | JUYN");
+        model.addAttribute("empType", params.get("empType")  );
         model.addAttribute("emp", this.commonService.getEmp(params));
         return "empInfo";
     }
     
-    @GetMapping("/emp/edit")
+    @GetMapping("/emp/edit/{id}")
     public String edit(){
         return "empEdit";
     }
+    
+    @GetMapping("/emp/detail/{id}")
+    public String Detail(){
+        return "empDetails";
+    }
+    
+    
 }

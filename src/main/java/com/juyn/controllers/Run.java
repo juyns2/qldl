@@ -33,6 +33,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @ControllerAdvice
 public class Run {
+
     @Autowired
     private TourService tourService;
 
@@ -41,7 +42,7 @@ public class Run {
 
     @Autowired
     private CommonService commonService;
-    
+
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
 
@@ -53,12 +54,13 @@ public class Run {
         model.addAttribute("currentUser", session.getAttribute("currentUser"));
         model.addAttribute("totalNumOrder", ApiHandlers.countOrder((Map<Integer, Order>) session.getAttribute("order")));
         model.addAttribute("priceOrder", ApiHandlers.orderStatus((Map<Integer, Order>) session.getAttribute("order")).get("priceOrder"));
+        model.addAttribute("tourtype", this.commonService.getTourType());
     }
 
     @RequestMapping("/")
     public String index(Model model, @RequestParam(value = "kw", required = false, defaultValue = "") String kw) {
         model.addAttribute("tour", this.tourService.getTour(kw, 1));
-        return "baseLayout";
+        return "home";
     }
 
     @GetMapping("/order")
@@ -78,7 +80,7 @@ public class Run {
         int billId = this.commonService.addReceipt((Map<Integer, Order>) session.getAttribute("order"), idUser);
         Session s = this.sessionFactory.getObject().getCurrentSession();
         if (billId != 0) {
-            model.addAttribute("billInfo", (BillOrder)s.get(BillOrder.class, billId)); //this.commonService.getBill().get(billId - 1)); 'GET_INDEX'
+            model.addAttribute("billInfo", (BillOrder) s.get(BillOrder.class, billId)); //this.commonService.getBill().get(billId - 1)); 'GET_INDEX'
             model.addAttribute("billDetails", this.commonService.getlistBillDetails(billId));
             session.removeAttribute("order");
             return "VnpayReturnUrl";
@@ -86,7 +88,6 @@ public class Run {
             return "PayFail";
         }
     }
-
 
 //    @RequestMapping("/**")
 //    public String handle() {
@@ -101,6 +102,4 @@ public class Run {
 //    public String show(){
 //        return "run";
 //    }
-    
-    
 }

@@ -7,6 +7,7 @@ import com.juyn.pojo.Employee;
 import com.juyn.pojo.MngEmployee;
 import com.juyn.pojo.Order;
 import com.juyn.pojo.TourOrderDetails;
+import com.juyn.pojo.TourType;
 import com.juyn.repository.CommonRepository;
 import com.juyn.service.CommonService;
 import java.util.List;
@@ -52,6 +53,11 @@ public class CommonServiceImpl implements CommonService {
     @Override
     public List<TourOrderDetails> getlistBillDetails(int billId) {
         return this.commonRepository.getlistBillDetails(billId);
+    }
+
+    @Override
+    public List<TourType> getTourType() {
+        return this.commonRepository.getTourType();
     }
 
 }

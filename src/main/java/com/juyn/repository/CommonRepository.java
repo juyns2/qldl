@@ -5,7 +5,9 @@ import com.juyn.pojo.Comment;
 import com.juyn.pojo.Employee;
 import com.juyn.pojo.MngEmployee;
 import com.juyn.pojo.Order;
+
 import com.juyn.pojo.TourOrderDetails;
+import com.juyn.pojo.TourType;
 import java.util.List;
 import java.util.Map;
 
@@ -16,4 +18,5 @@ public interface CommonRepository {
     List<BillOrder> getBill();
     List<Comment> getComment();
     List<TourOrderDetails> getlistBillDetails(int billId);
+    List<TourType> getTourType();
 }

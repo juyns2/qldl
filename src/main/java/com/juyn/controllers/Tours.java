@@ -79,6 +79,7 @@ public class Tours {
     @RequestMapping("/tourDetails/{tourId}")
     public String tourDetails(Model model, @PathVariable(value = "tourId") int tourId) {
         model.addAttribute("tourId", this.tourService.getTourIndex(tourId));
+        model.addAttribute("t", this.tourService.getTour());
         return "tourDetails";
     }
 

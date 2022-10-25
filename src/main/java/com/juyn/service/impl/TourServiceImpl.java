@@ -37,7 +37,7 @@ public class TourServiceImpl implements TourService {
     public boolean addOrUpdate(Tour tour) {
         if (tour.getImg().getSize() > 0) {
             try {
-                Map r = this.cloudinary.uploader().upload(tour.getImg().getBytes(), ObjectUtils.asMap("resource_type", "auto"));
+                Map r = this.cloudinary.uploader().upload(tour.getImg().getBytes(), ObjectUtils.asMap("resource_type", "auto", "folder", "tour_img"));
                 tour.setImage_url((String) r.get("secure_url"));
                 return this.tourRepository.addOrUpdate(tour);
             } catch (IOException ex) {
